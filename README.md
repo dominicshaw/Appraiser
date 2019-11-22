@@ -1,5 +1,3 @@
-[![Build Status](http://lonhgit01:8080/tfs/Main/Appraiser/_apis/build/status/Appraiser-CI)](http://lonhgit01:8080/tfs/Main/Appraiser/_build/latest?definitionId=11)
-
 # Introduction 
 
 This solution provides a self-service web front-end for users and managers to view and edit their appraisal.
