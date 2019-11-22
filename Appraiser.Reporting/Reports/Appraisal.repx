@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="19.2.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Appraisal" Margins="48, 48, 50, 29" PageWidth="850" PageHeight="1100" Version="19.2" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <CalculatedFields>
+    <Item1 Ref="2" Name="AppraisalTitle" Expression="[Staff].[Name] + ', ' + GetYear([PeriodEnd])" />
+  </CalculatedFields>
+  <Bands>
+    <Item1 Ref="3" ControlType="TopMarginBand" Name="TopMargin" HeightF="50" />
+    <Item2 Ref="4" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="29" />
+    <Item3 Ref="5" ControlType="DetailBand" Name="Detail" HeightF="140.312485" KeepTogether="true">
+      <SubBands>
+        <Item1 Ref="6" ControlType="SubBand" Name="Instructions" HeightF="184.770966">
+          <Controls>
+            <Item1 Ref="7" ControlType="XRLabel" Name="label11" Multiline="true" Text="Objectives should always be:  S – Specific     M – Measurable     A – Achievable     R – Relevant     T – Timely &#xD;&#xA;&#xD;&#xA;Description: Briefly describe each objective and when the goal/objective should be met or accomplished.  Aim to set 3 – 4 objectives.   Refer to guidance notes for more assistance.&#xD;&#xA;&#xD;&#xA;Measurement: How will the objective be evaluated? (Use quantitative measures such as % or dollar increase in revenue or market share, dollar or manpower hours saved, and/or use qualitative measures which are descriptive of criteria i.e. client satisfaction.)" SizeF="752.0002,151.45842" LocationFloat="0, 22.9999866" StyleName="BorderedNormalText" Padding="2,2,0,0,100" />
+            <Item2 Ref="8" ControlType="XRLabel" Name="label1" Multiline="true" Text="INSTRUCTIONS" SizeF="752.0002,23" LocationFloat="0, 0" StyleName="Header2" Padding="2,2,0,0,100" />
+          </Controls>
+        </Item1>
+      </SubBands>
+      <Controls>
+        <Item1 Ref="9" ControlType="XRLabel" Name="label10" Multiline="true" Text="Review Period:" SizeF="192.708328,23" LocationFloat="0, 107.854141" StyleName="BorderedBoldText" Padding="2,2,0,0,100" />
+        <Item2 Ref="10" ControlType="XRLabel" Name="label9" Multiline="true" Text="Manager:" SizeF="192.708328,23" LocationFloat="0, 84.85416" StyleName="BorderedBoldText" Padding="2,2,0,0,100" />
+        <Item3 Ref="11" ControlType="XRLabel" Name="label8" Multiline="true" Text="Individual's Name:" SizeF="192.708328,23" LocationFloat="0, 61.8541565" StyleName="BorderedBoldText" Padding="2,2,0,0,100" />
+        <Item4 Ref="12" ControlType="XRLabel" Name="label7" Multiline="true" Text="to" TextAlignment="MiddleCenter" SizeF="30.4584656,23" LocationFloat="338.541534, 107.854141" StyleName="BorderedNormalText" Padding="2,2,0,0,100" Borders="Right, Bottom">
+          <StylePriority Ref="13" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="14" ControlType="XRLabel" Name="label6" TextFormatString="{0:dd MMMM yyyy}" Multiline="true" Text="label6" SizeF="145.833267,23" LocationFloat="192.708267, 107.854141" StyleName="BorderedNormalText" Padding="2,2,0,0,100" Borders="Right, Bottom">
+          <ExpressionBindings>
+            <Item1 Ref="15" EventName="BeforePrint" PropertyName="Text" Expression="[PeriodStart]" />
+          </ExpressionBindings>
+          <StylePriority Ref="16" UseBorders="false" />
+        </Item5>
+        <Item6 Ref="17" ControlType="XRLabel" Name="label5" TextFormatString="{0:dd MMMM yyyy}" Multiline="true" Text="label5" SizeF="383.000183,23" LocationFloat="369, 107.854156" StyleName="BorderedNormalText" Padding="2,2,0,0,100" Borders="Right, Bottom">
+          <ExpressionBindings>
+            <Item1 Ref="18" EventName="BeforePrint" PropertyName="Text" Expression="[PeriodEnd]" />
+          </ExpressionBindings>
+          <StylePriority Ref="19" UseBorders="false" />
+        </Item6>
+        <Item7 Ref="20" ControlType="XRLabel" Name="label4" Multiline="true" Text="label4" SizeF="559.2919,23" LocationFloat="192.708328, 61.8541565" StyleName="BorderedNormalText" Padding="2,2,0,0,100" Borders="Right, Bottom">
+          <ExpressionBindings>
+            <Item1 Ref="21" EventName="BeforePrint" PropertyName="Text" Expression="[Employee]" />
+          </ExpressionBindings>
+          <StylePriority Ref="22" UseBorders="false" />
+        </Item7>
+        <Item8 Ref="23" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" SizeF="559.291931,23" LocationFloat="192.708267, 84.85416" StyleName="BorderedNormalText" Padding="2,2,0,0,100" Borders="Right, Bottom">
+          <ExpressionBindings>
+            <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="[Manager]" />
+          </ExpressionBindings>
+          <StylePriority Ref="25" UseBorders="false" />
+        </Item8>
+        <Item9 Ref="26" ControlType="XRLabel" Name="label2" Text="INDIVIDUAL'S INFORMATION" TextAlignment="MiddleLeft" SizeF="751.999939,61.8541565" LocationFloat="0, 0" StyleName="Header1" Font="Calibri, 16pt, style=Bold" ForeColor="255,0,126,122" BackColor="255,208,235,235" Padding="6,6,0,0,100" BorderColor="255,140,210,211" Borders="None" BorderWidth="2" />
+      </Controls>
+    </Item3>
+    <Item4 Ref="27" ControlType="DetailReportBand" Name="DetailReport" Level="0" DataMember="Objectives" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="28" ControlType="DetailBand" Name="Detail1" HeightF="25">
+          <SubBands>
+            <Item1 Ref="29" ControlType="SubBand" Name="SubBand1" HeightF="131.874588">
+              <Controls>
+                <Item1 Ref="30" ControlType="XRLabel" Name="label17" Multiline="true" SizeF="559.2919,31.2500076" LocationFloat="192.708328, 90.625" StyleName="Header3" Font="Arial, 9.75pt" Borders="Right, Bottom">
+                  <ExpressionBindings>
+                    <Item1 Ref="31" EventName="BeforePrint" PropertyName="Text" Expression="[Achieved]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="32" UseBorders="false" />
+                </Item1>
+                <Item2 Ref="33" ControlType="XRLabel" Name="label15" Multiline="true" Text="Objective Achieved?" SizeF="192.708328,31.2500076" LocationFloat="0, 90.625" StyleName="Header3" Font="Arial, 9.75pt" Borders="None" />
+                <Item3 Ref="34" ControlType="XRLabel" Name="label14" TextFormatString="Description: {0}" Multiline="true" SizeF="752.0002,46.875" LocationFloat="0, 0" StyleName="BorderedNormalText" Font="Arial, 9.75pt">
+                  <ExpressionBindings>
+                    <Item1 Ref="35" EventName="BeforePrint" PropertyName="Text" Expression="[Description]" />
+                  </ExpressionBindings>
+                </Item3>
+                <Item4 Ref="36" ControlType="XRLabel" Name="label13" TextFormatString="Measurement: {0}" Multiline="true" SizeF="752.0002,43.75" LocationFloat="0, 46.875" StyleName="BorderedNormalText" Font="Arial, 9.75pt">
+                  <ExpressionBindings>
+                    <Item1 Ref="37" EventName="BeforePrint" PropertyName="Text" Expression="[ManagerNotes]" />
+                  </ExpressionBindings>
+                </Item4>
+              </Controls>
+            </Item1>
+          </SubBands>
+          <Controls>
+            <Item1 Ref="38" ControlType="XRLabel" Name="label12" SizeF="529.082764,25" LocationFloat="0, 0" StyleName="Header2" Font="Arial, 9.75pt" Borders="Left, Top, Bottom">
+              <ExpressionBindings>
+                <Item1 Ref="39" EventName="BeforePrint" PropertyName="Text" Expression="[ShortName]" />
+              </ExpressionBindings>
+              <StylePriority Ref="40" UseBorders="false" />
+            </Item1>
+            <Item2 Ref="41" ControlType="XRLabel" Name="label16" TextFormatString="WEIGHT ({0:0}%)" SizeF="222.917175,25" LocationFloat="529.082764, 0" StyleName="Header2" Font="Arial, 9.75pt" Borders="Top, Right, Bottom">
+              <ExpressionBindings>
+                <Item1 Ref="42" EventName="BeforePrint" PropertyName="Text" Expression="[Weight]" />
+              </ExpressionBindings>
+              <StylePriority Ref="43" UseBorders="false" />
+            </Item2>
+          </Controls>
+        </Item1>
+      </Bands>
+    </Item4>
+    <Item5 Ref="44" ControlType="DetailReportBand" Name="ReviewDetailBand" Level="1" DataMember="Reviews" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="45" ControlType="DetailBand" Name="Detail2" HeightF="23" KeepTogether="true">
+          <SubBands>
+            <Item1 Ref="46" ControlType="SubBand" Name="IndividualComments" HeightF="28">
+              <Controls>
+                <Item1 Ref="47" ControlType="XRTable" Name="table1" SizeF="752.000061,28" LocationFloat="0, 0">
+                  <Rows>
+                    <Item1 Ref="48" ControlType="XRTableRow" Name="tableRow1" Weight="0.5">
+                      <Cells>
+                        <Item1 Ref="49" ControlType="XRTableCell" Name="tableCell1" Weight="1" TextFormatString="Individual Feedback: {0}" StyleName="BorderedNormalText" Borders="None">
+                          <ExpressionBindings>
+                            <Item1 Ref="50" EventName="BeforePrint" PropertyName="Text" Expression="[EmployeeNotes]" />
+                          </ExpressionBindings>
+                        </Item1>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item1>
+            <Item2 Ref="51" ControlType="SubBand" Name="ManagerComments" HeightF="35.79197">
+              <Controls>
+                <Item1 Ref="52" ControlType="XRTable" Name="table4" SizeF="752.000061,28" LocationFloat="0, 0">
+                  <Rows>
+                    <Item1 Ref="53" ControlType="XRTableRow" Name="tableRow6" Weight="0.5">
+                      <Cells>
+                        <Item1 Ref="54" ControlType="XRTableCell" Name="tableCell20" Weight="1" TextFormatString="Manager Feedback: {0}" StyleName="BorderedNormalText" Borders="None">
+                          <ExpressionBindings>
+                            <Item1 Ref="55" EventName="BeforePrint" PropertyName="Text" Expression="[ManagerNotes]" />
+                          </ExpressionBindings>
+                        </Item1>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item2>
+          </SubBands>
+          <Controls>
+            <Item1 Ref="56" ControlType="XRLabel" Name="label19" Multiline="true" SizeF="752.0002,23" LocationFloat="0, 0" StyleName="Header2" Padding="2,2,0,0,100">
+              <ExpressionBindings>
+                <Item1 Ref="57" EventName="BeforePrint" PropertyName="Text" Expression="[ReviewTypeName]" />
+              </ExpressionBindings>
+            </Item1>
+          </Controls>
+        </Item1>
+        <Item2 Ref="58" ControlType="DetailReportBand" Name="SubReportTrainingRequired" Level="1" DataMember="Reviews.TrainingRequired" DataSource="#Ref-0">
+          <Bands>
+            <Item1 Ref="59" ControlType="GroupHeaderBand" Name="GroupHeader2" GroupUnion="WithFirstDetail" HeightF="37.99998">
+              <Controls>
+                <Item1 Ref="60" ControlType="XRPanel" Name="panel1" SizeF="752.0002,37.99998" LocationFloat="0, 0">
+                  <Controls>
+                    <Item1 Ref="61" ControlType="XRTable" Name="table5" SizeF="716.0416,27.9999962" LocationFloat="23.958334, 10.000102" StyleName="BorderedNormalText">
+                      <Rows>
+                        <Item1 Ref="62" ControlType="XRTableRow" Name="tableRow7" Weight="1">
+                          <Cells>
+                            <Item1 Ref="63" ControlType="XRTableCell" Name="tableCell21" Weight="0.27862650553385415" Text="Identify any additional training required and how it will be achieved:" StyleName="BorderedNormalText" Borders="All">
+                              <StylePriority Ref="64" UseBorders="false" />
+                            </Item1>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item1>
+              </Controls>
+            </Item1>
+            <Item2 Ref="65" ControlType="DetailBand" Name="Detail3" HeightF="35.4589462">
+              <Controls>
+                <Item1 Ref="66" ControlType="XRTable" Name="table6" SizeF="716.0416,25" LocationFloat="23.958334, 0" StyleName="BorderedNormalText">
+                  <Rows>
+                    <Item1 Ref="67" ControlType="XRTableRow" Name="tableRow8" Weight="11.5">
+                      <Cells>
+                        <Item1 Ref="68" ControlType="XRTableCell" Name="tableCell24" Weight="0.23771478012316355">
+                          <ExpressionBindings>
+                            <Item1 Ref="69" EventName="BeforePrint" PropertyName="Text" Expression="[Name]" />
+                          </ExpressionBindings>
+                        </Item1>
+                        <Item2 Ref="70" ControlType="XRTableCell" Name="tableCell25" Weight="0.1792286539481226" TextFormatString="{0:dd MMM yyyy}">
+                          <ExpressionBindings>
+                            <Item1 Ref="71" EventName="BeforePrint" PropertyName="Text" Expression="[Date]" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="72" ControlType="XRTableCell" Name="tableCell26" Weight="0.5830565659287138">
+                          <ExpressionBindings>
+                            <Item1 Ref="73" EventName="BeforePrint" PropertyName="Text" Expression="[Description]" />
+                          </ExpressionBindings>
+                        </Item3>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item2>
+          </Bands>
+        </Item2>
+        <Item3 Ref="74" ControlType="DetailReportBand" Name="SubReportTrainingAttended" Level="0" DataMember="Reviews.TrainingAttended" DataSource="#Ref-0">
+          <Bands>
+            <Item1 Ref="75" ControlType="GroupHeaderBand" Name="GroupHeader3" GroupUnion="WithFirstDetail" HeightF="29.9999886">
+              <Controls>
+                <Item1 Ref="76" ControlType="XRTable" Name="table7" SizeF="716.0416,29.9999886" LocationFloat="23.958334, 0" StyleName="BorderedNormalText">
+                  <Rows>
+                    <Item1 Ref="77" ControlType="XRTableRow" Name="tableRow9" Weight="1">
+                      <Cells>
+                        <Item1 Ref="78" ControlType="XRTableCell" Name="tableCell27" Weight="0.27862650553385415" Text="List external training (including seminars, presentations and conferences) undertaken (with dates):" StyleName="BorderedNormalText" Borders="All">
+                          <StylePriority Ref="79" UseBorders="false" />
+                        </Item1>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item1>
+            <Item2 Ref="80" ControlType="DetailBand" Name="Detail4" HeightF="25">
+              <Controls>
+                <Item1 Ref="81" ControlType="XRTable" Name="table8" SizeF="716.0416,25" LocationFloat="23.958334, 0" StyleName="BorderedNormalText">
+                  <Rows>
+                    <Item1 Ref="82" ControlType="XRTableRow" Name="tableRow10" Weight="11.5">
+                      <Cells>
+                        <Item1 Ref="83" ControlType="XRTableCell" Name="tableCell30" Weight="0.2383487345377604">
+                          <ExpressionBindings>
+                            <Item1 Ref="84" EventName="BeforePrint" PropertyName="Text" Expression="[Name]" />
+                          </ExpressionBindings>
+                        </Item1>
+                        <Item2 Ref="85" ControlType="XRTableCell" Name="tableCell31" Weight="0.17970664469401043" TextFormatString="{0:dd MMM yyyy}">
+                          <ExpressionBindings>
+                            <Item1 Ref="86" EventName="BeforePrint" PropertyName="Text" Expression="[Date]" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="87" ControlType="XRTableCell" Name="tableCell32" Weight="0.58194462076822917">
+                          <ExpressionBindings>
+                            <Item1 Ref="88" EventName="BeforePrint" PropertyName="Text" Expression="[Description]" />
+                          </ExpressionBindings>
+                        </Item3>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item2>
+          </Bands>
+        </Item3>
+      </Bands>
+    </Item5>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="89" Name="Header1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 16pt, style=Bold" ForeColor="255,0,126,122" BackColor="255,208,235,235" BorderColor="255,140,210,211" Sides="All" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item2 Ref="90" Name="NormalText" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 11pt" ForeColor="Black" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="0" />
+    <Item3 Ref="91" Name="BorderedBoldText" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 11pt, style=Bold" ForeColor="Black" BackColor="White" BorderColor="255,140,210,211" Sides="Left, Right, Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item4 Ref="92" Name="Header2" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 12pt, style=Bold" ForeColor="255,0,126,122" BackColor="255,208,235,235" BorderColor="255,140,210,211" Sides="All" StringFormat="Center;Center;0;None;Character;Default" TextAlignment="MiddleCenter" BorderWidthSerializable="1" />
+    <Item5 Ref="93" Name="BorderedNormalText" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 11pt" ForeColor="Black" BackColor="White" BorderColor="255,140,210,211" Sides="Left, Right, Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item6 Ref="94" Name="Header3" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 12pt, style=Bold" ForeColor="255,0,126,122" BackColor="White" BorderColor="255,140,210,211" Sides="Left, Right, Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.ObjectBinding.ObjectDataSource,DevExpress.DataAccess.v19.2" Name="dataSource" Base64="PE9iamVjdERhdGFTb3VyY2UgTmFtZT0iZGF0YVNvdXJjZSI+PERhdGFTb3VyY2UgVHlwZT0iQXBwcmFpc2VyLlJlcG9ydGluZy5WaWV3TW9kZWxzLkFwcHJhaXNhbFJlcG9ydFZpZXdNb2RlbCwgQXBwcmFpc2VyLlJlcG9ydGluZywgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwiIC8+PC9PYmplY3REYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

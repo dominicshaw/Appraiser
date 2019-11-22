@@ -1,0 +1,46 @@
+<div style="padding:5px;"></div>
+<mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span class="expander-header">{{title}}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span class="expander-description">{{description}}</span>
+        </mat-panel-description>
+        <mat-action-row>
+            <button (click)="deleteObjective()" mat-button color="primary" title="Delete Training Event"><i
+                    class="material-icons md-24 red">clear</i></button>
+        </mat-action-row>
+    </mat-expansion-panel-header>
+
+    <div class="form-container">
+
+        <div>
+            <mat-form-field style="margin-right: 20px;">
+                <input matInput placeholder="Training Name" [(ngModel)]="training.name">
+            </mat-form-field>
+
+            <mat-form-field style="margin-right: 20px;">
+                <input matInput [matDatepicker]="dtTrainingDate" placeholder="Training Date"
+                    [(ngModel)]="training.date">
+                <mat-datepicker-toggle matSuffix [for]="dtTrainingDate"></mat-datepicker-toggle>
+                <mat-datepicker #dtTrainingDate></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field>
+            <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10"
+                matInput placeholder="Training Description" [(ngModel)]="training.description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <select matNativeControl placeholder="Training Type" [(ngModel)]="training.trainingType">
+                <option value="0">Attended</option>
+                <option value="1">Required</option>
+            </select>
+        </mat-form-field>
+
+    </div>
+
+</mat-expansion-panel>

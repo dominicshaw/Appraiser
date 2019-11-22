@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="19.2.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="AppraisalChanges" Landscape="true" Margins="29, 30, 27, 8" PageWidth="1100" PageHeight="850" Version="19.2" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="TopMargin" HeightF="27" />
+    <Item2 Ref="3" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="8" />
+    <Item3 Ref="4" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="80.37502">
+      <Controls>
+        <Item1 Ref="5" ControlType="XRLabel" Name="label1" Text="Report Title" SizeF="1040.00012,58.75001" LocationFloat="0, 0" StyleName="Header1">
+          <ExpressionBindings>
+            <Item1 Ref="6" EventName="BeforePrint" PropertyName="Text" Expression="[Title]" />
+          </ExpressionBindings>
+        </Item1>
+      </Controls>
+    </Item3>
+    <Item4 Ref="7" ControlType="DetailBand" Name="Detail" HeightF="28.29167" KeepTogether="true">
+      <Controls>
+        <Item1 Ref="8" ControlType="XRLabel" Name="label2" Text="Changes Made" SizeF="1040.00012,28" LocationFloat="0, 0" StyleName="Header2" Font="Arial, 9.75pt" Borders="None" />
+      </Controls>
+    </Item4>
+    <Item5 Ref="9" ControlType="DetailReportBand" Name="DetailReport" Level="0" DataMember="Changes" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="10" ControlType="GroupHeaderBand" Name="GroupHeader1" GroupUnion="WithFirstDetail" HeightF="31.91665">
+          <Controls>
+            <Item1 Ref="11" ControlType="XRTable" Name="table2" SizeF="1040.00024,25.9166718" LocationFloat="0, 0" StyleName="Header3">
+              <Rows>
+                <Item1 Ref="12" ControlType="XRTableRow" Name="tableRow3" Weight="1">
+                  <Cells>
+                    <Item1 Ref="13" ControlType="XRTableCell" Name="tableCell3" Weight="0.1999456552358774" Text="Changed When:" StyleName="Header3" Borders="None" />
+                    <Item2 Ref="14" ControlType="XRTableCell" Name="tableCell4" Weight="0.18579036323879888" Text="Changed By:" StyleName="Header3" />
+                    <Item3 Ref="15" ControlType="XRTableCell" Name="tableCell5" Weight="0.2320110151563794" Multiline="true" Text="Field Changed:&#xD;&#xA;" StyleName="Header3" />
+                    <Item4 Ref="16" ControlType="XRTableCell" Name="tableCell6" Weight="0.716477806985243" Text="Change" StyleName="Header3" />
+                  </Cells>
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item1>
+        <Item2 Ref="17" ControlType="DetailBand" Name="Detail1" HeightF="58.08328">
+          <Controls>
+            <Item1 Ref="18" ControlType="XRTable" Name="table3" SizeF="1040,50" LocationFloat="0, 0" StyleName="BorderedNormalText">
+              <Rows>
+                <Item1 Ref="19" ControlType="XRTableRow" Name="tableRow4" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="20" ControlType="XRTableCell" Name="tableCell8" Weight="0.14985903814305432" StyleName="BorderedNormalText" Borders="All">
+                      <ExpressionBindings>
+                        <Item1 Ref="21" EventName="BeforePrint" PropertyName="Text" Expression="[When]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="22" UseBorders="false" />
+                    </Item1>
+                    <Item2 Ref="23" ControlType="XRTableCell" Name="tableCell9" Weight="0.13924972407269937" StyleName="BorderedNormalText" Borders="All">
+                      <ExpressionBindings>
+                        <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="[Username]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="25" UseBorders="false" />
+                    </Item2>
+                    <Item3 Ref="26" ControlType="XRTableCell" Name="tableCell10" Weight="0.17389198562268232" StyleName="BorderedNormalText" Borders="All">
+                      <ExpressionBindings>
+                        <Item1 Ref="27" EventName="BeforePrint" PropertyName="Text" Expression="[Field]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="28" UseBorders="false" />
+                    </Item3>
+                    <Item4 Ref="29" ControlType="XRTableCell" Name="tableCell11" Weight="0.5369991319326366" StyleName="BorderedNormalText" Borders="All">
+                      <ExpressionBindings>
+                        <Item1 Ref="30" EventName="BeforePrint" PropertyName="Text" Expression="[Old]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="31" UseBorders="false" />
+                    </Item4>
+                  </Cells>
+                </Item1>
+                <Item2 Ref="32" ControlType="XRTableRow" Name="tableRow1" Weight="11.5">
+                  <Cells>
+                    <Item1 Ref="33" ControlType="XRTableCell" Name="tableCell1" Weight="0.14985903814305432" Multiline="true" StyleName="BorderedNormalText" Borders="None" />
+                    <Item2 Ref="34" ControlType="XRTableCell" Name="tableCell2" Weight="0.13924972407269937" Multiline="true" StyleName="BorderedNormalText" />
+                    <Item3 Ref="35" ControlType="XRTableCell" Name="tableCell13" Weight="0.17389198562268232" Multiline="true" Text="Changed To:" StyleName="BorderedNormalText" />
+                    <Item4 Ref="36" ControlType="XRTableCell" Name="tableCell14" Weight="0.5369991319326366" Multiline="true" Text="tableCell14" StyleName="BorderedNormalText">
+                      <ExpressionBindings>
+                        <Item1 Ref="37" EventName="BeforePrint" PropertyName="Text" Expression="[New]" />
+                      </ExpressionBindings>
+                    </Item4>
+                  </Cells>
+                </Item2>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item2>
+      </Bands>
+    </Item5>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="38" Name="Header1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 16pt, style=Bold" ForeColor="255,0,126,122" BackColor="255,208,235,235" BorderColor="255,140,210,211" Sides="All" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item2 Ref="39" Name="NormalText" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 11pt" ForeColor="Black" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="0" />
+    <Item3 Ref="40" Name="BorderedBoldText" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 11pt, style=Bold" ForeColor="Black" BackColor="White" BorderColor="255,140,210,211" Sides="Left, Right, Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item4 Ref="41" Name="Header2" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 12pt, style=Bold" ForeColor="255,0,126,122" BackColor="255,208,235,235" BorderColor="255,140,210,211" Sides="All" StringFormat="Center;Center;0;None;Character;Default" TextAlignment="MiddleCenter" BorderWidthSerializable="1" />
+    <Item5 Ref="42" Name="BorderedNormalText" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 11pt" ForeColor="Black" BackColor="White" BorderColor="255,140,210,211" Sides="Left, Right, Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item6 Ref="43" Name="Header3" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Calibri, 12pt, style=Bold" ForeColor="255,0,126,122" BackColor="White" BorderColor="255,140,210,211" Sides="Left, Right, Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.ObjectBinding.ObjectDataSource,DevExpress.DataAccess.v19.2" Name="objectDataSource1" Base64="PE9iamVjdERhdGFTb3VyY2UgTmFtZT0ib2JqZWN0RGF0YVNvdXJjZTEiPjxEYXRhU291cmNlIFR5cGU9IkFwcHJhaXNlci5SZXBvcnRpbmcuVmlld01vZGVscy5BcHByYWlzYWxDaGFuZ2VSZXBvcnRWaWV3TW9kZWwsIEFwcHJhaXNlci5SZXBvcnRpbmcsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsIiAvPjwvT2JqZWN0RGF0YVNvdXJjZT4=" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

@@ -1,0 +1,28 @@
+<mat-expansion-panel>
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span class="expander-header">{{title}}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span class="expander-description">{{description}}</span>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="form-container">
+        <mat-form-field>
+            <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4" cdkAutosizeMaxRows="10"
+                matInput placeholder="Individual Notes" [(ngModel)]="review.employeeNotes"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4" cdkAutosizeMaxRows="10"
+                matInput placeholder="Manager Notes" [(ngModel)]="review.managerNotes"></textarea>
+        </mat-form-field>
+
+        <app-training-list [review]="review" title="Training">
+        </app-training-list>
+        
+        <mat-checkbox style="margin-top: 15px;" [(ngModel)]="review.complete">Complete?</mat-checkbox>
+    </div>
+
+</mat-expansion-panel>

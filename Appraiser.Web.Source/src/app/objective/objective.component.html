@@ -1,0 +1,45 @@
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span class="expander-header">{{title}}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span class="expander-description">{{description}}</span>
+        </mat-panel-description>
+        <mat-action-row>
+            <button (click)="deleteObjective()" mat-button color="primary" title="Delete {{title}}"><i
+                    class="material-icons md-24 red">clear</i></button>
+        </mat-action-row>
+    </mat-expansion-panel-header>
+
+    <div class="form-container">
+        <mat-form-field>
+            <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"
+                matInput placeholder="Description" [(ngModel)]="objective.description" required minlength="4"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"
+                matInput placeholder="Measurement" [(ngModel)]="objective.measurement" required minlength="4"></textarea>
+        </mat-form-field>
+        <div>
+            <mat-form-field style="margin-right: 20px;">
+                <input matInput placeholder="Weight %" type="number" [(ngModel)]="objective.weight"
+                    style="text-align: right;">
+                <span matSuffix>%</span>
+            </mat-form-field>
+            <mat-checkbox style="margin-right: 20px;" [(ngModel)]="objectiveAchieved" (change)="toggleAchieved($event)">Achieved?</mat-checkbox>
+            <mat-form-field>
+                <input matInput placeholder="Achieved %" type="number" [(ngModel)]="objective.achieved"
+                    style="text-align: right;">
+                <span matSuffix>%</span>
+            </mat-form-field>
+        </div>
+        <mat-form-field>
+            <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"
+                matInput placeholder="Manager Notes" [(ngModel)]="objective.managerNotes" width="100%"></textarea>
+        </mat-form-field>
+    </div>
+
+</mat-expansion-panel>
+<div style="padding:5px;"></div>

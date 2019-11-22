@@ -1,0 +1,82 @@
+<div *ngIf="responsibility">
+
+    <mat-card>
+
+        <div style="display: inline-block; width: 100%;">
+            <div style="float: left;">
+                <h2>{{responsibility.staff.name}}</h2>
+            </div>
+            <div style="float: right;">
+                <button (click)="signoff()" mat-button color="primary" title="Signoff these Responsibilities">
+                    <i class="material-icons md-30 gray">check_circle_outline</i>
+                </button>
+                <button (click)="save()" mat-button color="primary" title="Save">
+                    <i class="material-icons md-30 gray">save</i>
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <mat-accordion>
+
+            <mat-expansion-panel expanded="true">
+
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="expander-header">Responsibilities</span>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <span class="expander-description">An overview of your responsibilities at TT</span>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="form-container">
+
+                    <mat-form-field style="width: 100%;">
+                        <input matInput placeholder="Job Title" [(ngModel)]="responsibility.roleTitle">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
+                            cdkAutosizeMaxRows="10" matInput placeholder="Key Skills"
+                            [(ngModel)]="responsibility.keySkills" required minlength="4"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
+                            cdkAutosizeMaxRows="10" matInput placeholder="Description"
+                            [(ngModel)]="responsibility.description" required minlength="4"></textarea>
+                    </mat-form-field>
+
+                    <div style="width: 100%;">
+                        <mat-form-field style="float: left;">
+                            <input matInput placeholder="Manager"
+                                [(ngModel)]="responsibility.staff.manager.name" disabled>
+                        </mat-form-field>
+                        <mat-form-field style="float: right;">
+                            <input matInput [matDatepicker]="dtManagerSignoff" placeholder="Manager Signoff"
+                                [(ngModel)]="responsibility.managerSignoff" disabled>
+                            <mat-datepicker-toggle matSuffix [for]="dtManagerSignoff"></mat-datepicker-toggle>
+                            <mat-datepicker #dtManagerSignoff></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field style="margin-right: 20px; float: right;">
+                            <input matInput [matDatepicker]="dtEmployeeSignoff" placeholder="Employee Signoff"
+                                [(ngModel)]="responsibility.employeeSignoff" disabled>
+                            <mat-datepicker-toggle matSuffix [for]="dtEmployeeSignoff"></mat-datepicker-toggle>
+                            <mat-datepicker #dtEmployeeSignoff></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+            </mat-expansion-panel>
+
+            <div style="padding:5px;"></div>
+
+        </mat-accordion>
+
+        <button (click)="save()" mat-raised-button color="primary" style="width: 100%; margin-top: 5px;">Save</button>
+
+    </mat-card>
+
+</div>

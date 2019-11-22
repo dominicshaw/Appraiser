@@ -1,0 +1,23 @@
+<h2>My Staff</h2>
+
+<!-- -->
+<ul class="staffList">
+  <li *ngFor="let staff of staffList"
+    [class.selected]="staff === selectedStaff"
+    (click)="onSelect(staff)">
+    <span class="badge">{{staff.id}}</span> {{staff.name}}
+  </li>
+</ul>
+<!-- -->
+
+<!-- 
+<ul class="staffList">
+  <li *ngFor="let staff of staffList">
+    <a routerLink="/detail/{{staff.id}}">
+      <span class="badge">{{staff.id}}</span> {{staff.name}}
+    </a>
+  </li>
+</ul> 
+-->
+
+<app-staff-detail [staff]="selectedStaff"></app-staff-detail>

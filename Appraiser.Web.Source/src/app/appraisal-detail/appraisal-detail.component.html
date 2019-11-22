@@ -1,0 +1,43 @@
+<div *ngIf="appraisal">
+
+    <mat-card>
+
+        <div style="display: inline-block; width: 100%;">
+            <div style="float: left;">
+                <h2>{{appraisal.staff.name}}, {{appraisal.periodStart | date:'yyyy'}}</h2>
+            </div>
+            <div style="float: right;">
+                <button (click)="clone()" mat-button color="primary" title="Clone this Appraisal">
+                    <i class="material-icons md-30 gray">call_split</i>
+                </button>
+                <button (click)="lock()" [hidden]="!appraisal.currentUserIsManager || appraisal.objectivesLocked"
+                    mat-button color="primary" title="Lock Objectives">
+                    <i class="material-icons md-30 gray">lock</i>
+                </button>
+                <button (click)="unlock()" [hidden]="!appraisal.currentUserIsManager || !appraisal.objectivesLocked"
+                    mat-button color="primary" title="Unlock Objectives">
+                    <i class="material-icons md-30 gray">lock_open</i>
+                </button>
+                <button (click)="print()" mat-button color="primary" title="Download Printable Version">
+                    <i class="material-icons md-30 gray">print</i>
+                </button>
+                <button (click)="save()" mat-button color="primary" title="Save">
+                    <i class="material-icons md-30 gray">save</i>
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <mat-accordion>
+            <app-objectives [objectives]="appraisal.objectives" title="Objectives"></app-objectives>
+            <div style="padding:5px;"></div>
+            <app-review [review]="appraisal.midYearReview" title="Mid-Year Review"></app-review>
+            <div style="padding:5px;"></div>
+            <app-review [review]="appraisal.fullYearReview" title="Full Year Review"></app-review>
+            <div style="padding:5px;"></div>
+        </mat-accordion>
+
+        <button (click)="save()" mat-raised-button color="primary" style="width: 100%; margin-top: 5px;">Save</button>
+
+    </mat-card>
+
+</div>

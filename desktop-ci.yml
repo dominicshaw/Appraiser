@@ -1,0 +1,68 @@
+resources:
+- repo: self
+  fetchDepth: 15
+
+queue:
+  name: Default
+
+steps:
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    workingDir: 'Appraiser.Web.Source'
+    verbose: false
+
+- task: Npm@1
+  displayName: 'npm build'
+  inputs:
+    command: custom
+    workingDir: 'Appraiser.Web.Source'
+    verbose: false
+    customCommand: 'run build -- --prod'
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
+    feedsToUse: config
+    nugetConfigPath: NuGet.config
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '**/*.csproj'
+    arguments: '--configuration Release'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*[Tt]ests/*.csproj'
+    arguments: '--configuration Release'
+
+- task: DotNetCoreCLI@2
+  displayName: Publish API
+  inputs:
+    command: publish
+    projects: '*Api*/*.csproj'
+    publishWebProjects: False
+    arguments: '--configuration Release --output $(build.artifactstagingdirectory)' # --runtime win-x64 --self-contained 
+    zipAfterPublish: False
+
+- task: DotNetCoreCLI@2
+  displayName: Publish Web
+  inputs:
+    command: publish
+    projects: '*Web*/*.csproj'
+    publishWebProjects: False
+    arguments: '--configuration Release --output $(build.artifactstagingdirectory)' # --runtime win-x64 --self-contained 
+    zipAfterPublish: False
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+
+

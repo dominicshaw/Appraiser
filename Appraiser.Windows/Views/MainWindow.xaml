@@ -1,0 +1,24 @@
+﻿<dx:ThemedWindow x:Class="Appraiser.Windows.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:vms="clr-namespace:Appraiser.Windows.ViewModels"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance vms:MainViewModel}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <dxg:GridControl ItemsSource="{Binding Appraisals}">
+
+            <dxg:GridColumn FieldName="Id"                 Header="Id"      Width="50"  Visible="False" />
+            <dxg:GridColumn FieldName="Staff.Logon"        Header="Logon"   Width="50"  Visible="True"  />
+            <dxg:GridColumn FieldName="Staff.Name"         Header="Name"    Width="100" Visible="True"  />
+            <dxg:GridColumn FieldName="Staff.Manager.Name" Header="Manager" Width="100" Visible="True"  />
+
+            <dxg:GridControl.View>
+                <dxg:TableView AutoWidth="True" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</dx:ThemedWindow>

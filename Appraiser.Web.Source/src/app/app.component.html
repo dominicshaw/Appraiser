@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron amended-jumbotron">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <nav class="navbar">
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/appraisal">Your Appraisals</a>
+        <a routerLink="/management">Managed Appraisals</a>
+        <a routerLink="/responsibilities">Responsibilities</a>
+        <button (click)="add()" mat-button color="primary" title="Add Appraisal">
+            <i class="material-icons md-36 teal">note_add</i>
+        </button>
+      </nav>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

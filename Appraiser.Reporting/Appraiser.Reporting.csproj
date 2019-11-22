@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Appraisal.repx" />
+    <None Remove="AppraisalChanges.repx" />
+    <None Remove="Reports\Appraisal.repx" />
+    <None Remove="Reports\AppraisalChanges.repx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Appraisal.repx" />
+    <EmbeddedResource Include="Reports\AppraisalChanges.repx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Reporting.Core" Version="19.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Appraiser.Common\Appraiser.Common.csproj" />
+    <ProjectReference Include="..\Appraiser.DTOs\Appraiser.DTOs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Appraisal.cs">
+      <DependentUpon>Appraisal.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Appraisal.Designer.cs">
+      <DependentUpon>Appraisal.repx</DependentUpon>
+    </Compile>
+    <Compile Update="AppraisalChanges.cs">
+      <DependentUpon>AppraisalChanges.repx</DependentUpon>
+    </Compile>
+    <Compile Update="AppraisalChanges.Designer.cs">
+      <DependentUpon>AppraisalChanges.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Appraisal.cs">
+      <DependentUpon>Appraisal.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Appraisal.Designer.cs">
+      <DependentUpon>Appraisal.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\AppraisalChanges.cs">
+      <DependentUpon>AppraisalChanges.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\AppraisalChanges.Designer.cs">
+      <DependentUpon>AppraisalChanges.repx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

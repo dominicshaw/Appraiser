@@ -1,0 +1,2 @@
+﻿dotnet ef migrations add Initial-Database --project Appraiser.Data --startup-project Appraiser.Api
+dotnet ef database update --project Appraiser.Data --startup-project Appraiser.Api

@@ -1,0 +1,21 @@
+<mat-expansion-panel [(expanded)]="expand">
+
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span class="expander-header">{{title}}</span>
+        </mat-panel-title>
+        <mat-panel-description>
+            <span class="expander-description">{{description}}</span>
+        </mat-panel-description>
+        <mat-action-row>
+            <button (click)="$event.stopPropagation();addTraining()" mat-button color="primary" title="Add Training"><i
+                    class="material-icons md-24 dark-teal">add_circle_outline</i></button>
+        </mat-action-row>
+    </mat-expansion-panel-header>
+
+    <div class="form-container">
+        <app-training *ngFor="let training of review.training" [review]="review" [training]="training">
+        </app-training>
+    </div>
+
+</mat-expansion-panel>

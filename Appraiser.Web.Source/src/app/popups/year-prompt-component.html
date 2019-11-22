@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>{{data.mode}} Appraisal</h2>
+
+<div mat-dialog-content>
+
+  <p>{{data.title}}</p>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Employee</mat-label>
+    <select matNativeControl [(ngModel)]="data.employee">
+      <option *ngFor="let emp of data.employees" [value]="emp.id">
+        {{emp.name}}
+      </option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Year" type="number" [(ngModel)]="data.year"
+        style="text-align: right;">
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions style="float: right;">
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="accent" [mat-dialog-close]="data" cdkFocusInitial style="min-width: 175px;">Ok</button>
+</div>
+<div class="clearfix"></div>
+<div style="height: 7px;"></div>

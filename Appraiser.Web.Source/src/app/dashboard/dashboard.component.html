@@ -1,0 +1,14 @@
+<mat-card>
+
+  <h2>Dashboard: All Appraisals</h2>
+
+  <ag-grid-angular #agGrid
+      style="width: 100%; height: 500px;" 
+      class="ag-theme-balham"
+      [rowData]="rowData" 
+      [columnDefs]="columnDefs"
+      [modules]="modules"
+      (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+
+</mat-card>
